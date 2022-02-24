@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "bdd67a61-044a-4613-8405-212bc4720021",
+		"name": "Stores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET_ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://crm-coupons-api-stores-group-dev-dot-crm-cupons-dev.ue.r.appspot.com/store/",
+					"protocol": "https",
+					"host": [
+						"crm-coupons-api-stores-group-dev-dot-crm-cupons-dev",
+						"ue",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"store",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SYNC_DW",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTExIiwidXNlcl9uYW1lIjoiZGV2LndAYnVyZ2Vya2luZy5jb20uYnIifQ.m4Lg5rdwWXe2VvKxRC2WrFHAoUpI4_0IYwQwIUpzyhY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://crm-coupons-api-stores-group-dev-dot-crm-cupons-dev.ue.r.appspot.com/sync_dw/",
+					"protocol": "https",
+					"host": [
+						"crm-coupons-api-stores-group-dev-dot-crm-cupons-dev",
+						"ue",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"sync_dw",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_BY_ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://crm-coupons-api-stores-group-dev-dot-crm-cupons-dev.ue.r.appspot.com/store/9997",
+					"protocol": "https",
+					"host": [
+						"crm-coupons-api-stores-group-dev-dot-crm-cupons-dev",
+						"ue",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"store",
+						"9997"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_SEGMENT_STORES",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTExIiwidXNlcl9uYW1lIjoiZGV2LndAYnVyZ2Vya2luZy5jb20uYnIifQ.m4Lg5rdwWXe2VvKxRC2WrFHAoUpI4_0IYwQwIUpzyhY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"and_opr\": [\r\n            {\r\n                \"or_opr\": [\r\n                    {\r\n                        \"option\": \"include\",\r\n                        \"field\": \"ds_store_state\",\r\n                        \"operator\": \"=\",\r\n                        \"value\": [\"DF\"]\r\n                    },\r\n                    {\r\n                        \"option\": \"include\",\r\n                        \"field\": \"ds_store_state\",\r\n                        \"operator\": \"=\",\r\n                        \"value\": [\"RJ\"]\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"or_opr\": [\r\n                    {\r\n                        \"option\": \"exclude\",\r\n                        \"field\": \"id_store\",\r\n                        \"operator\": \"in\",\r\n                        \"value\": [9999, 15172, 15173, 15174, 15510, 15748]\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crm-coupons-api-stores-group-dev-dot-crm-cupons-dev.ue.r.appspot.com/segment_store_data/",
+					"protocol": "https",
+					"host": [
+						"crm-coupons-api-stores-group-dev-dot-crm-cupons-dev",
+						"ue",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"segment_store_data",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_SEGMENT_COUNT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTExIiwidXNlcl9uYW1lIjoiZGV2LndAYnVyZ2Vya2luZy5jb20uYnIifQ.m4Lg5rdwWXe2VvKxRC2WrFHAoUpI4_0IYwQwIUpzyhY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"and_opr\": [\r\n        {\r\n            \"or_opr\": [\r\n                {\r\n                    \"option\": \"include\",\r\n                    \"field\": \"ds_store_state\",\r\n                    \"operator\": \"=\",\r\n                    \"value\": [\r\n                        \"AL\"\r\n                    ]\r\n                },\r\n                {\r\n                    \"option\": \"include\",\r\n                    \"field\": \"ds_store_state\",\r\n                    \"operator\": \"=\",\r\n                    \"value\": [\r\n                        \"SP\"\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crm-coupons-api-stores-group-dev-dot-crm-cupons-dev.ue.r.appspot.com/segment_store_count/",
+					"protocol": "https",
+					"host": [
+						"crm-coupons-api-stores-group-dev-dot-crm-cupons-dev",
+						"ue",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"segment_store_count",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
